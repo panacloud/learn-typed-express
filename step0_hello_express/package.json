@@ -1,0 +1,22 @@
+{
+  "name": "step0_hello_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-typescript": "^2.8.1",
+    "gulp-watch": "^4.3.5"
+  },
+  "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "^4.13.3"
+  }
+}
