@@ -5,8 +5,7 @@ var viewRenderingEngine = require("ejs");
 
 var app : express.Express = express();
 
-app.engine('html', viewRenderingEngine.renderFile);
-app.set('view engine', 'html'); // so you can render('index') 
+app.set('view engine', 'ejs'); // so you can render('index') 
 
 app.get('/', (req, res) => {
 	res.render('index');  
