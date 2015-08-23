@@ -1,10 +1,10 @@
 /// <reference path='./typings/tsd.d.ts' />
 var express = require('express');
 var app = express();
-app.set('client', __dirname + '../../client');
+app.set('client', __dirname + '../client');
 app.engine('html', require('ejs').renderFile);
 app.get('/', function (req, res) {
-    res.render('../../client/index.html');
+    res.render('../client/index.html');
 });
 var port = process.env.PORT || 3000;
 var server = app.listen(port, function () {

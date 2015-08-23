@@ -3,29 +3,42 @@ var ts = require('gulp-typescript');
 var rimraf = require('gulp-rimraf');
 var nodemon = require('gulp-nodemon');
  
-gulp.task('cleanBuiltDir', function(){
-  return gulp.src('built').pipe(rimraf());
+gulp.task('cleanServerDistDir', function(){
+  return gulp.src('dist/server').pipe(rimraf());
+}); 
+
+gulp.task('cleanClientDistDir', function(){
+  return gulp.src('dist/client').pipe(rimraf());
 }); 
  
-gulp.task('buildServer', ['cleanBuiltDir'],  function () {
-  var tsResult = gulp.src('./server/src/**/*.ts')
+gulp.task('buildServer', ['cleanServerDistDir'],  function () {
+  var tsResult = gulp.src('./server/**/*.ts')
     .pipe(ts({
         module: 'CommonJS'
       }));
-  return tsResult.js.pipe(gulp.dest('./server/built/'));
+  return tsResult.js.pipe(gulp.dest('./dist/server/'));
+});
+
+gulp.task('buildClient', ['cleanClientDistDir'],  function () {
+  var clientResult = gulp.src('./client/**/*.*');
+  return clientResult.pipe(gulp.dest('./dist/client/'));
 });
 
 
-gulp.task('nodemon', ['buildServer', 'watch'], function(){
+gulp.task('nodemon', ['buildServer', 'buildClient', 'watchServer', 'watchClient'], function(){
     nodemon({
-        script: './server/built/server.js'
+        script: './dist/server/app.js'
     }).on('restart', function(){
-        console.log('nodemon restarted server.js');
+        console.log('nodemon restarted app.js');
     })
 })
 
-gulp.task('watch', function() {
-  gulp.watch('./server/src/**/*.ts', ['buildServer']);
+gulp.task('watchServer', function() {
+  gulp.watch('./server/**/*.ts', ['buildServer']);
+});
+
+gulp.task('watchClient', function() {
+  gulp.watch('./client/**/*.*', ['buildClient']);
 });
 
 gulp.task('default', ['nodemon']);
