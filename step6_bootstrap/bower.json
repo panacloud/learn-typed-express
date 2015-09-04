@@ -1,0 +1,23 @@
+{
+  "name": "step4_bootstrap",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ziaukhan/learn-node-typescript",
+  "authors": [
+    "Zia Khan <ziaukhan@hotmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
+}
