@@ -8,4 +8,7 @@ router.get('/', function(req, res, next) {
   res.render('page2', { titleData: 'This is the second page' });
 });
 
+
+
+
 export = router;

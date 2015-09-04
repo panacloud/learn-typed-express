@@ -10,6 +10,8 @@ var app : express.Express = express();
 
 import indexRoute = require('./routes/index');
 import secondPageRoute = require('./routes/second');
+import userCreateRoute = require('./routes/createUser');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, '/../views'));
@@ -21,6 +23,7 @@ app.use(express.static(path.join(__dirname, '/../public')));
 
 app.use('/', indexRoute);
 app.use('/p2', secondPageRoute);
+app.use('/create', userCreateRoute);
 
 
 var port: number = process.env.PORT || 3000;
