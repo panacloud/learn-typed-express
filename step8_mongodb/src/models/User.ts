@@ -1,12 +1,10 @@
 //import mongoose = require("mongoose");
 import mongoose from '../db';
 
+//https://github.com/horiuchi/DefinitelyTyped/blob/master/mongoose/mongoose-tests.ts
 import IUser from 'IUser';
 
-interface IUserModel extends IUser, mongoose.Document { 
-    
-  
-  }
+export interface IUserModel extends IUser, mongoose.Document { }
 
 var userSchema = new mongoose.Schema({
     email: String,
@@ -14,7 +12,7 @@ var userSchema = new mongoose.Schema({
     displayName: String
 });
 
-var User = mongoose.model<IUserModel>("User", userSchema);
 
-export default User;
+export let User = mongoose.model<IUserModel>("User", userSchema);
+
 

@@ -13,6 +13,10 @@ gulp.task('cleanBuiltDir', function(){
 gulp.task('cleanCSSDir', function(){
   return gulp.src('./public/css').pipe(rimraf());
 }); 
+
+gulp.task('cleanJSDir', function(){
+  return gulp.src('./public/js').pipe(rimraf());
+});
  
 gulp.task('buildServer', ['cleanBuiltDir'],  function () {
   var tsResult = gulp.src('src/**/*.ts')
@@ -22,8 +26,16 @@ gulp.task('buildServer', ['cleanBuiltDir'],  function () {
   return tsResult.js.pipe(gulp.dest('built/'));
 });
 
+gulp.task('buildClient', ['cleanJSDir'],  function () {
+  var tsResult = gulp.src('viewsSrc/**/*.ts')
+    .pipe(ts({
+        module: 'CommonJS'
+      }));
+  return tsResult.js.pipe(gulp.dest('public/js'));
+});
 
-gulp.task('nodemon', ['buildServer', 'buildStyles', 'watch', 'watchStyles'], function(){
+
+gulp.task('nodemon', ['buildServer', 'buildClient', 'buildStyles', 'watch', 'watchStyles', 'watchClient'], function(){
     nodemon({
         script: './built/server.js'
     }).on('restart', function(){
@@ -69,6 +81,10 @@ gulp.task('watch', function() {
 
 gulp.task('watchStyles', function() {
   gulp.watch('sass/**/*.scss', ['buildStyles']);
+});
+
+gulp.task('watchClient', function() {
+  gulp.watch('viewsSrc/**/*.ts', ['buildClient']);
 });
 
 gulp.task('default', ['nodemon']);

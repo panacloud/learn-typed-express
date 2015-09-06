@@ -2,11 +2,17 @@
 
 import express = require('express');
 var router = express.Router();
-import User from '../models/User';
+import {IUserModel, User} from '../models/User';
 
 /* GET new User */
 router.get('/', function(req, res, next) {
-  res.render('createUser', { userData: createPersistantUser() });
+  /*var user = createPersistantUser();
+  User.findOne({email: email },  function(err: any, res: IUserModel){
+        
+    });*/
+  res.render('createUser');
+  
+  
 });
 
 

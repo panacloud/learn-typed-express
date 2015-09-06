@@ -4,10 +4,14 @@ var router = express.Router();
 var User_1 = require('../models/User');
 /* GET new User */
 router.get('/', function (req, res, next) {
-    res.render('createUser', { userData: createPersistantUser() });
+    /*var user = createPersistantUser();
+    User.findOne({email: email },  function(err: any, res: IUserModel){
+          
+      });*/
+    res.render('createUser');
 });
 function createPersistantUser() {
-    var user = new User_1["default"]({ email: "ziaukhan@hotmail.com", displayName: "Zia" });
+    var user = new User_1.User({ email: "ziaukhan@hotmail.com", displayName: "Zia" });
     user.save(function (error) {
         if (error) {
             console.log(error);

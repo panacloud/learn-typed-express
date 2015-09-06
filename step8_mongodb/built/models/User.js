@@ -5,5 +5,4 @@ var userSchema = new db_1["default"].Schema({
     password: String,
     displayName: String
 });
-var User = db_1["default"].model("User", userSchema);
-exports["default"] = User;
+exports.User = db_1["default"].model("User", userSchema);

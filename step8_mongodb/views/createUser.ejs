@@ -3,13 +3,21 @@
     <meta charset="utf-8">
 
     <title>User Creation Page using Typescript</title>
+    <script src="js/createUserForm.js"></script>
     
 </head>
 <body>
+    <form id="frm1">
+            Display Name:<br>
+            <input type="text" name="displayname" id="displayname">
+            <br>
+            Email:<br>
+            <input type="text" name="email" id="email">
+            <br><br>
+            <input id="createUserButton" type="button" value="Create User">
+   </form>
 
-    <h1><%= userData.displayName %></h1>
-    <h1><%= userData.email %></h1>
-    <a href="/">Back to main page</a>
+    
 
 </body>
 </html>
