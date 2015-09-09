@@ -5,3 +5,5 @@
 /// <reference path="body-parser/body-parser.d.ts" />
 /// <reference path="morgan/morgan.d.ts" />
 /// <reference path="mongoose/mongoose.d.ts" />
+/// <reference path="whatwg-fetch/whatwg-fetch.d.ts" />
+/// <reference path="es6-promise/es6-promise.d.ts" />

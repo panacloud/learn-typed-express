@@ -25,6 +25,9 @@
     },
     "mongoose/mongoose.d.ts": {
       "commit": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "b3aeee64552e324581fdbe0926f4a96e981e451b"
     }
   }
 }
