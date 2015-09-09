@@ -9,7 +9,6 @@ import path = require('path');
 var app : express.Express = express();
 
 import indexRoute = require('./routes/index');
-import secondPageRoute = require('./routes/second');
 import userCreateFormRoute = require('./routes/createUserForm');
 
 import userCreateAPIRoute = require('./routes/api/createUser');
@@ -25,7 +24,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '/../public')));
 
 app.use('/', indexRoute);
-app.use('/p2', secondPageRoute);
 app.use('/create', userCreateFormRoute);
 
 app.use('/api/user', userCreateAPIRoute);

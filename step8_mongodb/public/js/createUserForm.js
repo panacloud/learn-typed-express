@@ -12,11 +12,15 @@ function createUser() {
     var form = document.getElementById("frm1");
     var elements = form.elements;
     console.log(elements.displayname.value);
-    callCreateUserAPI(elements.displayname.value, elements.email.value);
+    callCreateUserAPI(elements.displayname.value, elements.email.value, function () {
+        elements.displayname.value = "";
+        elements.email.value = "";
+    });
 }
-function callCreateUserAPI(displayname, email) {
+function callCreateUserAPI(displayname, email, clearFields) {
     //https://developers.google.com/web/updates/2015/03/introduction-to-fetch?hl=en
     //https://github.com/github/fetch
+    //http://davidwalsh.name/fetch
     window.fetch("./api/user/create", {
         method: 'post',
         headers: {
@@ -37,10 +41,11 @@ function callCreateUserAPI(displayname, email) {
         // Examine the text in the response  
         response.json().then(function (data) {
             if (data.created) {
-                console.log("User has been created in DB");
+                showResponse("User has been created in DB");
+                clearFields();
             }
             else {
-                console.log("Failed to create User in DB");
+                showResponse("Failed to create User in DB");
             }
             console.log(data);
         });
@@ -48,4 +53,9 @@ function callCreateUserAPI(displayname, email) {
         .catch(function (err) {
         console.log('Fetch Error :-S', err);
     });
+}
+function showResponse(message) {
+    console.log(message);
+    var ele = document.getElementById("responseMessage");
+    ele.innerHTML = message;
 }
