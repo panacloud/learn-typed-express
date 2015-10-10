@@ -1,0 +1,31 @@
+<html>
+
+<style>
+input[type="text"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	width : 50%;
+	height  : 50px;
+	font-size : 30px;
+}
+input[type="submit"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	height  : 50px;
+	font-size : 30px;
+}
+</style>
+<body>
+
+    <div>
+        <form action="/submitdata" method="post">
+            <input type="text" name="name" placeholder="Enter User Name" />
+            <br>
+			<input type="text" name="email" placeholder="Enter Email" />
+            <br>
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+    </div>
+
+</body>
+</html>
