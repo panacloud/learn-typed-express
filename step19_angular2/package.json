@@ -4,7 +4,7 @@
   "description": "",
   "main": "app/app.js",
   "scripts": {
-    "gulp": "tsc -target es5 -module commonjs gulpfile.ts && gulp"
+    "start": "tsc -target es5 -module commonjs gulpfile.ts && gulp"
   },
   "author": "",
   "license": "ISC",
