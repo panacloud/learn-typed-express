@@ -1,0 +1,25 @@
+{
+  "name": "Angular2-Web-App",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "tsc -target es5 -module commonjs gulpfile.ts && gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-typescript": "^2.8.1",
+    "gulp-watch": "^4.3.5"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.44",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "systemjs": "^0.19.5"
+  }
+}

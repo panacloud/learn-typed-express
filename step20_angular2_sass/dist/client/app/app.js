@@ -16,11 +16,11 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>'
+            template: "\n        <h1>Typed and SASS Styled Angular 2 and Node.js Web App</h1>\n    ",
+            styleUrls: ['app/app.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 })();
 angular2_1.bootstrap(AppComponent);
-//# sourceMappingURL=app.js.map
