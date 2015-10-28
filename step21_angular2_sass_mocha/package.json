@@ -5,7 +5,7 @@
   "main": "app/app.js",
   "scripts": {
     "start": "tsc -target es5 -module commonjs gulpfile.ts && gulp",
-    "pretest": "tsc test/*Test.ts --module commonjs",
+    "pretest": "tsc -p test",
     "test": "mocha"
   },
   "author": "",
