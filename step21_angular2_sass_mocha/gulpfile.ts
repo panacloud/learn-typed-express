@@ -60,7 +60,8 @@ gulp.task('buildClient', ['copyHTMLClient', 'copySystemLib', 'copyAngular2Lib', 
 
 gulp.task('nodemon', ['buildServer', 'buildClient', 'watchServer', 'watchClient'], function(){
     nodemon({
-        script: './dist/server/app.js'
+        script: './dist/server/app.js',
+        ignore: ["test/*"]
     }).on('restart', function(){
         console.log('nodemon restarted app.js');
     })
