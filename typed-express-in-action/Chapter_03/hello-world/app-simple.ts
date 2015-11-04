@@ -5,7 +5,7 @@ import http = require("http");
 
 var app = express();
 
-app.use(function(request, response) {
+app.use((request: express.Request, response: express.Response) => {
   response.writeHead(200, { "Content-Type": "text/plain" });
   response.end("Hello, World!");
 });

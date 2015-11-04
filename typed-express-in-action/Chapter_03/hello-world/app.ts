@@ -8,7 +8,7 @@ var app = express();
 
 app.use(logger("short"));
 
-app.use(function(request, response, next) {
+app.use((request: express.Request, response: express.Response, next: ()=>void) => {
   var minute = (new Date()).getMinutes();
   if ((minute % 2) === 0) {
     next();
@@ -18,7 +18,7 @@ app.use(function(request, response, next) {
   }
 });
 
-app.use(function(request, response) {
+app.use((request: express.Request, response: express.Response) => {
   response.writeHead(200, { "Content-Type": "text/plain" });
   response.end("Hello, World!");
 });

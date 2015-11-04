@@ -6,33 +6,33 @@ import http = require("http");
 
 var app = express();
 
-app.get("/", function(request, response) {
+app.get("/", (request: express.Request, response: express.Response) => {
   response.end("Welcome to my homepage!");
 });
 
-app.get("/about", function(request, response) {
+app.get("/about", (request: express.Request, response: express.Response) => {
   response.end("Welcome to the about page!");
 });
 
-app.get("/weather", function(request, response) {
+app.get("/weather", (request: express.Request, response: express.Response) => {
   response.end("The current weather is NICE.");
 });
 
-app.get("/hello/:who", function(request, response) {
+app.get("/hello/:who", (request: express.Request, response: express.Response) => {
   response.end("Hello, " + request.params.who + ".");
   // Fun fact: this has some security issues, which we’ll get to!
 });
 
-app.get("/redirect_home", function (request, response) {
+app.get("/redirect_home", (request: express.Request, response: express.Response) => {
   response.redirect("/");
 });
 
-app.get("/sendfile", function (request, response) {
+app.get("/sendfile", (request: express.Request, response: express.Response) => {
   var filePath = path.resolve(__dirname, "cool-facts.txt");
   response.sendFile(filePath);
 });
 
-app.use(function(request, response) {
+app.use((request: express.Request, response: express.Response) => {
   response.statusCode = 404;
   response.end("404!");
 });
