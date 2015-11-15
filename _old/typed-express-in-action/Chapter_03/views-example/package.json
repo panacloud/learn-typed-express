@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "^5.0.0-alpha.2",
+    "morgan": "^1.6.1"
+  }
+}

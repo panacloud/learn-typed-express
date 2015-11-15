@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "chapter3",
+  "version": "1",
+  "scripts": {
+    "start": "node app",
+    "tsc": "tsc --module commonjs -p ."
+  },
+  "dependencies": {
+    "express": "^5.0.0-alpha.2",
+    "morgan": "^1.6.1"
+  }
+}

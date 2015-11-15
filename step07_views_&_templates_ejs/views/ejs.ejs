@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Express using Typescript</title>
+</head>
+<body>
+
+    <!-- String Print -->
+    <h1><%= "Hello World" %></h1>
+    
+    <!-- Script -->
+    <% var data = [1,2,3,4,5,6] %>
+    <% for(var i = 0; i < data.length; i++){ %>
+        <h3><%= data[i] %></h3>
+    <% } %>
+    
+    
+    <script>
+        <%= 'alert(1)' %>
+        
+        var data = <%- '[{user : "rehan"},{user : "zia"}]' %>
+        console.log(data)        
+    </script>
+    
+   
+    
+</body>
+</html>
