@@ -5,6 +5,7 @@
     "start": "node app"
   },
   "dependencies": {
+    "ejs": "^2.3.4",
     "express": "5.0.0-alpha.2"
   }
 }
