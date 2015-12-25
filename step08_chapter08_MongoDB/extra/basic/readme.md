@@ -1,0 +1,1 @@
+https://github.com/Appsilon/styleguide/wiki/mongoose-typescript-models
