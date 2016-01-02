@@ -1,6 +1,7 @@
 /// <reference path="./typings/tsd.d.ts" />
 
-import User = require("./User");
+import User from "./User";
+import { IUserModel } from "./IUserModel"
 
 import mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
@@ -23,7 +24,7 @@ function saveObj(callback: ()=>void){
 }
 
 function searchObj(){
-    User.find({displayName: "Zia"}, function(err, res){
+    User.find({displayName: "Zia"}, function(err, res: IUserModel[]){
           if(err){
               console.log("Error in finding");
           }

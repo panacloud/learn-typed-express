@@ -1,9 +1,9 @@
 /// <reference path="./typings/tsd.d.ts" />
-var User = require("./User");
+var User_1 = require("./User");
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 function saveObj(callback) {
-    var user = new User({
+    var user = new User_1["default"]({
         email: "zia@panacloud.com",
         password: "123",
         displayName: "Zia"
@@ -18,7 +18,7 @@ function saveObj(callback) {
     });
 }
 function searchObj() {
-    User.find({ displayName: "Zia" }, function (err, res) {
+    User_1["default"].find({ displayName: "Zia" }, function (err, res) {
         if (err) {
             console.log("Error in finding");
         }

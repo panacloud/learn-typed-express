@@ -1,18 +1,16 @@
 /// <reference path="./typings/tsd.d.ts" />
 
 import mongoose = require("mongoose");
-import IUser = require("./shared/IUser");
+import { IUserModel } from "./IUserModel";
 
-interface IUserModel extends IUser, mongoose.Document { 
-    
-}
 
 var userSchema = new mongoose.Schema({
-    email: String,
-    password: String,
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true},
     displayName: String
 });
 
 var User = mongoose.model<IUserModel>("User", userSchema);
 
-export = User;
+export default User;
+
