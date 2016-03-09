@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs"
+	},
+    "files": [
+        "app.ts",
+        "User.ts",
+        "Project.ts",
+        "./shared/IUser.ts",
+        "./shared/IProject.ts"
+    ]
+}

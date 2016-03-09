@@ -1,0 +1,11 @@
+{
+  "name": "HelloWorld",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "mongoose": "^4.3.4"
+  }
+}
