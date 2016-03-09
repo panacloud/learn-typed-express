@@ -105,28 +105,37 @@ function searchObj(){
       
 }
 
-
+// Saving User 1 to Database without Project
 saveUsers("zeeshan1@panacloud.com","zeeshan1", null, function (user1:IUserModel){
     
+    // Saving Project 1 to Database with User 1
     saveProjects("FirstProject",user1,function (project1:IProjectModel){
         
+        // Updating User 1 to add Project 1 in it
         updateUser(user1,project1,function (){
         
+            // Saving User 2 to Database with Project 1
             saveUsers("zeeshan2@panacloud.com","zeeshan2", project1, function (user2:IUserModel){
+                
+                // Updating Project 1 to add User 2 in it
                 updateProject(project1,user2,function (){
                     
+                    // Saving Project 2 to Database with User 1
                     saveProjects("SecondProject",user1,function (project2:IProjectModel){
+                        
+                        // Updating User 1 to add Project 2 in it
                         updateUser(user1,project2,function (){
+                            
+                            // Updating User 2 to add Project 2 in it
                             updateUser(user2,project2,function (){
                                 console.log("done save all");
                                 
+                                //User User 1, populate Projects and display
                                 searchObj();
                                 
                             });    
                         });
                     });
-                    
-                    
                 })
             })
         })
