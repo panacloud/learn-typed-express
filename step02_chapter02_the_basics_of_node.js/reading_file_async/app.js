@@ -1,7 +1,8 @@
-/// <reference path="./typings/tsd.d.ts" />
-var fs = require("fs");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var fs_1 = require("fs");
 var options = { encoding: "utf-8" };
-fs.readFile("myfile.txt", options, function (err, data) {
+fs_1.readFile("myfile.txt", options, function (err, data) {
     if (err) {
         console.error("Error reading file!");
         return;
