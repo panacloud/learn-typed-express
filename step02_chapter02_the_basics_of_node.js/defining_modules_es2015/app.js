@@ -1,5 +1,6 @@
-/// <reference path="./typings/tsd.d.ts" />
-var random_integer_1 = require("./random-integer");
-console.log(random_integer_1.randomInteger()); // 12
-console.log(random_integer_1.randomInteger()); // 77
-console.log(random_integer_1.randomInteger()); // 8
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var my_module_1 = require("./my-module");
+console.log(my_module_1.randomInteger(100));
+console.log(my_module_1.randomInteger(100));
+console.log(my_module_1.randomInteger(100));
