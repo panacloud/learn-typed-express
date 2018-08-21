@@ -1,15 +1,11 @@
-/// <reference path="./typings/tsd.d.ts" />
+import * as express from "express";
 
-import express = require("express");
+let app = express();
 
-var app = express();
-
-app.get("/", (request : express.Request, response: express.Response) => {
+app.get("/", (request, response) => {
   response.send("Hello world!");
 });
 
 app.listen(3000, () => {
   console.log("Express app started on port 3000.");
 });
-
-
