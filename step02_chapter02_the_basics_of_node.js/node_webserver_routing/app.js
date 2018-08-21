@@ -1,4 +1,5 @@
-/// <reference path="./typings/tsd.d.ts" />
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var http = require("http");
 function requestHandler(request, response) {
     if (request.url === "/") {
@@ -12,4 +13,6 @@ function requestHandler(request, response) {
     }
 }
 var server = http.createServer(requestHandler);
-server.listen(3000);
+server.listen(3000, function () {
+    console.log("listening on port 3000");
+});
