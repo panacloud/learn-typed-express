@@ -1,6 +1,5 @@
-/// <reference path="./typings/tsd.d.ts" />
+import * as http from "http";
 
-import http = require("http");
 function requestHandler(request: http.IncomingMessage, response: http.ServerResponse) {
 	if (request.url === "/") {
 		response.end("Welcome to the homepage!");
@@ -12,5 +11,9 @@ function requestHandler(request: http.IncomingMessage, response: http.ServerResp
 		response.end("Error! File not found.");
 	}
 }
+
 var server: http.Server = http.createServer(requestHandler);
-server.listen(3000);
+
+server.listen(3000, () => {
+	console.log("listening on port 3000")
+});

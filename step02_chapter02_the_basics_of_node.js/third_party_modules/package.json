@@ -4,6 +4,7 @@
     "start": "node app"
   },
   "dependencies": {
-    "mustache": "^2.2.0"
+    "@types/mustache": "^0.8.31",
+    "mustache": "^2.3.2"
   }
 }

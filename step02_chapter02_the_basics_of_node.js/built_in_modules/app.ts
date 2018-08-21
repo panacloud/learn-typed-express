@@ -1,6 +1,6 @@
-/// <reference path="./typings/tsd.d.ts" />
 
-import url = require("url"); 
+import * as url from "url" 
+
 var parsedURL = url.parse("http://www.example.com/profile?name=barry");
 console.log(parsedURL.protocol); // "http:"
 console.log(parsedURL.host); // "www.example.com"
